@@ -1,0 +1,250 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 Consolas;\f1\fnil\fcharset0 Consolas-Bold;\f2\fnil\fcharset0 Consolas-Italic;
+\f3\fnil\fcharset0 Cambria;\f4\fnil\fcharset0 Cambria-Italic;\f5\fswiss\fcharset0 Helvetica;
+}
+{\colortbl;\red255\green255\blue255;\red3\green58\blue145;\red0\green0\blue0;\red163\green48\blue0;
+\red0\green128\blue42;\red80\green132\blue176;\red77\green173\blue131;\red255\green38\blue0;\red143\green159\blue54;
+\red113\green175\blue190;\red215\green139\blue64;\red183\green196\blue209;\red169\green139\blue185;\red255\green208\blue128;
+\red124\green151\blue108;}
+{\*\expandedcolortbl;;\csgenericrgb\c1195\c22930\c56751;\csgenericrgb\c0\c0\c0;\csgenericrgb\c63893\c18820\c0;
+\csgenericrgb\c0\c50251\c16643;\csgenericrgb\c31263\c51821\c68939;\csgenericrgb\c30143\c67904\c51415;\csgenericrgb\c100000\c14913\c0;\csgenericrgb\c56077\c62252\c21018;
+\csgenericrgb\c44401\c68704\c74435;\csgenericrgb\c84302\c54572\c25245;\csgenericrgb\c71873\c76841\c81785;\csgenericrgb\c66366\c54701\c72366;\csgenericrgb\c100000\c81390\c50056;
+\csgenericrgb\c48777\c59318\c42361;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs22 \cf2 \{\cf3 \
+ \cf4  "FranceGlobalDataByDate\cf3 "\cf2  \cf3 :\cf5  \cf3 [\
+  \cf2  \cf3  \{\
+   \cf4    "da\cf3 t\cf2 e\cf3 "\cf6  : "2020-11-\cf2 1\cf3 5",\
+  \cf4     "sourceT\cf3 y\cf2 p\cf3 e\cf6 " : "ministere-sa\cf2 n\cf3 te",\
+ \cf4      "gu\cf3 e\cf2 r\cf3 i\cf7 s" :\cf3  1111\
+\cf5  
+\f1\b \cf8    
+\f0\b0 \cf5  \cf3  [...\cf2 ]\cf3 \
+    \cf2 \}\cf3 ,\
+    \cf4 \{\
+   \cf3  \cf2  \cf3  \cf6 "date" : "20\cf2 2\cf3 0-11-15\cf4 ",\
+    \cf3  \cf2  \cf3 "\cf7 guer\cf2 i\cf3 s" : 22\cf4 22,\
+      "\cf3 s\cf2 o\cf3 u\cf6 rceType" : "open\cf3 covid19\cf5 -
+\f1\b \cf8 fr"
+\f0\b0 \cf3 \
+    \cf2  \cf3  [.\cf5 .\cf3 .\cf2 ]\cf9 \
+    \}\
+  ]\
+\}\
+\
+@Spri\cf3 n
+\f1\b \cf5 gBootA
+\f0\b0 \cf3 p
+\f1\b \cf5 plica
+\f0\b0 \cf3 tion\
+public class L
+\f1\b \cf5 esGuerisDu
+\f0\b0 \cf3 Covid19 implements Comman
+\f1\b \cf5 dLineRu
+\f0\b0 \cf3 n\cf4 ner \{\cf3 \
+\cf4     p\cf3 rivate static final Logger l\cf2 og = Logg\cf3 erFactory.getLogger(\cf2 LesGu\cf3 eri
+\f1\b \cf5 sDuCovid19
+\f0\b0 \cf3 .\cf4 class)\cf3 ;\cf4 \
+   \cf3 private static final DateTimeFormatter DATE_PARAM_FORMATTER \cf2 = DateTi\cf3 meForm
+\f1\b \cf5 atter.I
+\f0\b0 \cf3 S\cf4 O_DATE\cf3 ;\cf4 \
+   \cf3  private static final String S\cf6 OURCE_INTERESSANT\cf3 E = "mi
+\f1\b \cf5 nistere
+\f0\b0 \cf3 -\cf4 sante\cf3 ";\
+\
+    private final WebClient \cf2 httpCl\cf3 i\cf6 ent = WebClient.create("https://corona\cf3 virusapi-fra
+\f1\b \cf5 nce.no
+\f0\b0 \cf3 w\cf4 .sh");\
+   \cf3  \cf2 \
+  \cf3  \cf4  publ\cf3 ic static void main(final String[] ar
+\f1\b \cf5 gs)
+\f0\b0 \cf3  \cf2 \{\
+         var a\cf3 pp = new SpringAppli\cf2 catio\cf3 n(LesGuerisDuCo\cf2 vid19.class);\
+      \cf3   app.setWebApplicat\cf2 ionT\cf3 yp
+\f2\i \cf10 e(WebApplicationType.NONE);// Pour n
+\f0\i0 \cf3 e
+\f2\i \cf10  pas lancer 
+\f0\i0 \cf2 le \cf3 serveur web\
+        ap\cf9 p.run(arg\cf3 s);\
+
+\f1\b \cf5     \}
+\f0\b0 \cf3 \
+\cf4     \cf2 \
+  \cf3  \cf4  @Ove\cf3 rride\
+
+\f1\b \cf5     
+\f0\b0 \cf3 public void run(final String... args)\cf2  \{\cf3 \
+  \cf2       var\cf3  \cf7 h\cf3 ier = LocalDate.now().minusDays(\cf2 1);\
+    \cf3  \cf7  \cf3   var avantHier = hier.minusDays(1);\
+\
+  \cf2    \cf3  \cf2   Integer nouve\cf3 auxGueris = Mono.zip(getNombr\cf2 eGueris(hier, S\cf3 OURCE_INTERESSANTE), getNombreGuer
+\f2\i \cf10 is(a
+\f0\i0 \cf3 vantHier, SOUR\cf2 CE_INTE\cf3 RESSANTE)) \cf2 // 8\cf6 \
+            .doFirst(() -> log.info("R\'e9cup\'e9ration des\cf3  do
+\f2\i \cf10 nn\'e9e
+\f0\i0 \cf3 s entre hier e\cf2 t a\cf3 vant-hier...")) \cf2 // 9\cf3 \
+          \cf2   .ma\cf3 p(tu
+\f2\i \cf10 ple -
+\f0\i0 \cf3 > tuple.getT1(\cf2 ) - tuple.get\cf3 T2()) // 10\
+  \cf2           .o\cf3 nErrorResum\cf2 e(err\cf3 o\cf6 r -> Mono.fromRunnable(() -> log.error("Probl\'e8me l\cf3 ors de l\cf2 a r\'e9cup\'e9ra\cf3 tion d
+\f2\i \cf10 es do
+\f0\i0 \cf3 nn\'e9es: \{\}", er\cf2 ror.g\cf3 etMe
+\f2\i \cf10 ssage
+\f0\i0 \cf3 ()))) // 
+\f2\i \cf10 11\
+            .block(); // 12\
+    
+\f0\i0 \cf3     // .... 
+\f1\b \cf5 \'c0 vous 
+\f0\b0 \cf3 d'\'e9crire la sui\cf2 te ....\
+    \}\cf3 \
+\cf4 \
+   \cf3  private Mono<Int\cf4 eger>\cf3  getNombreGueris(final Loc
+\f1\b \cf5 alDate
+\f0\b0 \cf3  date, final\cf2  St\cf3 ring source) \{\
+        r\cf2 etu\cf3 rn httpClien\cf2 t.ge\cf3 t\cf6 ()\
+                     \cf3 .u\cf2 ri(uri -> \cf3 u\cf6 ri.pat\cf3 h("/FranceGlobalDataBy\cf2 Date").\cf3 queryPar\cf2 am("d\cf3 ate", DATE_PARAM_FORMATTER\cf2 .format(\cf3 date)).build())\
+        \cf2           \cf3    .retrie\cf2 ve()\cf3 \
+ 
+\f2\i \cf10     
+\f0\i0 \cf3                 .bodyTo\cf2 Mono(Js\cf3 onNode.clas\cf2 s) /\cf3 /\cf6  1\
+                     .doFirst(() -> log.info("R\'e9cup\'e9rat\cf3 ion des donn\'e9es p
+\f2\i \cf10 our le
+\f0\i0 \cf3  \{\} sur la source '\{\}'.\cf2 ..", dat\cf3 e, source)) // 2.\cf2 a\
+ \cf3  \cf6                    .\cf3 doOnNext(js\cf2 onData -> log.\cf3 info(
+\f2\i \cf10 "Donn\'e9
+\f0\i0 \cf3 es re\'e7ues: \{\}", jsonDat\cf2 a.t\cf3 oPrettyString())) // 2\cf2 .b\cf3 \
+\cf6                      .ma\cf3 p(j
+\f2\i \cf10 sonD
+\f0\i0 \cf3 ata -> jsonData.get("Fr\cf2 anceGlobalD\cf3 ataByDate")) // 3\
+ \cf2      \cf3  \cf7  \cf3              \cf2 .fla\cf3 tMap\cf2 Man\cf3 y(dataByDate -> Flu
+\f2\i \cf10 x.ra
+\f0\i0 \cf3 nge(0, dataByDate.size(\cf2 )).map\cf3 (dataByDate::get)) // \cf2 4\
+   \cf3             \cf2    \cf3  \cf6   .filter(da\cf3 ta\cf2 ByDate ->\cf3  sour\cf2 ce.e\cf3 qua
+\f2\i \cf10 ls(d
+\f0\i0 \cf3 ataByDate.get("sourceTy\cf2 pe").te\cf3 xtValue())).ne\cf2 xt() // 5\
+\cf3       \cf2    \cf3  \cf6         \cf3    .\cf2 fla\cf3 tMap(data -> Mono.jus
+\f2\i \cf10 tOrE
+\f0\i0 \cf3 mpty(data.get("gueris")\cf2 )).map(JsonNo\cf3 de::in\cf2 tValu\cf3 e
+\f1\b \cf5 ) /
+\f0\b0 \cf3 / 6\
+                   \cf2   .swit\cf3 c\cf6 hIfEmpty(Mono.error(new RuntimeException(String.\cf3 format("Pas de donn\'e9
+\f2\i \cf10 es p
+\f0\i0 \cf3 our le %s
+\f3\fs24  su
+\f0\fs22 \cf9 r la source '%s' !", d\cf3 a
+\f1\b \cf5 te, so
+\f0\b0 \cf3 u
+\f1\b \cf5 rce))
+\f0\b0 \cf3 )); // 7\
+    \}\
+\}\
+
+\f1\b \cf5 \
+\
+\
+@Spr
+\f0\b0 \cf3 ingBootApplication\
+publ
+\f1\b \cf5 ic clas
+\f0\b0 \cf3 s\cf4  LesGu\cf3 e\cf4 risDu\cf3 Covid19 implements CommandLi\cf2 neRunner \cf3 \{\
+   private static\cf2  fina\cf3 l Logge
+\f1\b \cf5 r log 
+\f0\b0 \cf3 =\cf4  Logge\cf3 r\cf4 Fact\cf3 o\cf2 ry.g\cf3 e\cf4 tLogg\cf3 er(LesGuerisDuCovid19.class);\
+    p
+\f1\b \cf5 ubl
+\f0\b0 \cf3 i\cf2 c static void mai\cf3 n(final String[] arg\cf2 s) \{\cf3 \
+        var ap\cf2 p = new SpringApplica\cf3 tion(LesGuerisDuCovi\cf2 d19.\cf3 cl
+\f2\i \cf10 ass);\
+        app.setWebApplication
+\f0\i0 \cf3 T
+\f2\i \cf10 ype(WebAppli
+\f0\i0 \cf2 cat\cf3 ionType.NONE);// Pour n\cf9 e pas lan\cf3 cer l
+\f1\b \cf5 e serv
+\f0\b0 \cf3 e\cf4 ur w\cf3 e\cf2 b\
+\cf3  \cf4      \cf3   app.r
+\f1\b \cf5 un(a
+\f0\b0 \cf3 rgs);\
+    \}\
+
+\f2\i \cf10     \
+    @Override\
+    pub
+\f0\i0 \cf3 lic void 
+\f3\fs24 r
+\f0\fs22 u
+\f3\fs19 \cf11 n(final String\cf12 ... args
+\f4\i \cf13 )
+\f3\i0\fs24 \cf3  
+\f4\i\fs19 \cf13 \{\
+ 
+\f3\i0 \cf11      // Notre code \cf14 \'e0 ex
+\f4\i \cf13 \'e9
+\f3\i0 \cf12 cuter 
+\f4\i \cf13 ici
+\f3\i0 \cf12 \
+  
+\f4\i \cf13   \}
+\f3\i0 \cf11 \
+\}\
+\
+\
+\cf12 \
+public
+\f4\i  class Lan\cf13 ce
+\f3\i0 \cf12 ur \{\
+
+\f4\i \cf13   
+\f3\i0 \cf11  
+\fs24 \cf3  
+\fs19 \cf11 publ
+\f4\i \cf13 i
+\f3\i0\fs24 \cf3 c 
+\f4\i\fs19 \cf13 s
+\f3\i0\fs24 \cf3 ta
+\f4\i\fs19 \cf13 tic vo
+\f3\i0 \cf12 id main(
+\f4\i \cf13 S
+\f3\i0\fs24 \cf3 t
+\f4\i\fs19 \cf13 ring
+\f3\i0 \cf11 [] args\cf12 ) \{
+\f4\i \cf13 \
+
+\f3\i0 \cf12       
+\f4\i \cf13   
+\f3\i0 \cf14 Service.di
+\f4\i \cf13 sBon
+\f3\i0\fs24 \cf3 j
+\f4\i\fs19 \cf13 our().bl
+\f3\i0 \cf11 ock();\cf12 \
+    
+\f4\i \}\
+\cf13 \
+
+\f3\i0 \cf15 \}\
+\
+cl
+\f4\i \cf13 a
+\f3\i0\fs24 \cf3 s
+\f4\i\fs19 \cf13 s Service \{\
+    st
+\f3\i0 \cf12 atic
+\f4\i \cf13  
+\f3\i0 \cf12 Mono<\cf11 Stri
+\f4\i \cf13 n
+\f3\i0 \cf11 g
+\fs24 \cf3 >
+\fs19 \cf11  dis
+\f4\i \cf13 B
+\f3\i0\fs24 \cf3 o
+\f4\i\fs19 \cf13 nj
+\f3\i0\fs24 \cf3 o
+\f5 \cf0 ur() \{\
+        return Mono.just("hello")\
+                   .map(t -> null);\
+    \}\
+\}\
+\
+}

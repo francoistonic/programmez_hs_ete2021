@@ -1,0 +1,914 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fnil\fcharset0 Consolas-Bold;\f1\fnil\fcharset0 Consolas;\f2\fnil\fcharset0 Consolas-BoldItalic;
+\f3\fnil\fcharset0 Consolas-Italic;\f4\froman\fcharset0 TimesNewRomanPSMT;\f5\froman\fcharset0 TimesNewRomanPS-BoldMT;
+\f6\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red1\green25\blue147;\red0\green0\blue0;\red146\green144\blue0;
+\red0\green143\blue0;\red123\green36\blue141;\red4\green51\blue255;\red60\green105\blue167;\red40\green74\blue119;
+\red146\green146\blue146;}
+{\*\expandedcolortbl;;\csgenericrgb\c484\c9609\c57496;\csgenericrgb\c0\c0\c0;\csgenericrgb\c57380\c56553\c0;
+\csgenericrgb\c0\c56028\c0;\csgenericrgb\c48138\c14043\c55235;\csgenericrgb\c1680\c19831\c100000;\csgenericrgb\c23676\c41263\c65435;\csgenericrgb\c15840\c28998\c46835;
+\csgenericrgb\c57414\c57415\c57415;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\b\fs16 \cf2 public class 
+\f1\b0 \cf3 CustomerShould \{\
+   \cf4  @Test\
+  
+\f0\b \cf2   public final voi
+\f1\b0 \cf3 d print_statement_when_rent_a_regular_movie_for_3_days() \{\
+        Customer vincent
+\f0\b \cf2  = n
+\f1\b0 \cf3 ew Custom
+\f0\b \cf5 er("Vince
+\f1\b0 \cf3 nt");\
+        vincent.addRen
+\f0\b \cf2 tal(
+\f1\b0 \cf3 new Ren
+\f0\b \cf2 tal(
+\f1\b0 \cf3 new Mo
+\f0\b \cf5 vie("Star w
+\f1\b0 \cf3 ars", Mo
+\f2\i\b \cf6 vie.REG
+\f1\i0\b0 \cf3 ULA\cf7 R\cf3 ), 3));\
+   
+\f3\i      asser
+\f1\i0 tThat(vincent.statement())\
+                .isEq
+\f0\b \cf5 ualTo("Rental Record for V\cf2 in\cf5 ce
+\f1\b0 \cf3 nt\\n" +\
+                 
+\f0\b \cf5  \cf2   \cf5     "\\tSt\cf2 ar\cf5  wa\cf2 rs\cf5 \\t
+\f1\b0 \cf3 3.5\\n" +\
+                
+\f0\b \cf5         "Amount owe\cf2 d \cf5 is
+\f1\b0 \cf3  3.5\\n" +\
+               
+\f0\b \cf5          "You earned 1 frequent rente
+\f1\b0 \cf3 r points");\
+ \cf4    \}\
+\
+  
+\f0\b \cf2   @Test\
+    publi
+\f1\b0 \cf3 c final void print_statement_when_rent_a_new_release_movie_for_4_days() \{\
+        Custo
+\f0\b \cf2 mer 
+\f1\b0 \cf3 vincent =
+\f0\b \cf5  new Cust
+\f1\b0 \cf3 omer("Vincent");\
+        vin
+\f0\b \cf2 cent
+\f1\b0 \cf3 .addRen
+\f0\b \cf2 tal(
+\f1\b0 \cf3 new Re
+\f0\b \cf5 ntal(new Movie("
+\f1\b0 \cf3 No Time 
+\f2\i\b \cf6 to Die", Mo
+\f1\i0\b0 \cf3 vie\cf7 .\cf3 NEW_RELEASE)
+\f3\i , 4));\
+  
+\f1\i0       assertThat(vincent.statement())\
+          
+\f0\b \cf5       .isEqualTo("Rental R\cf2 ec\cf5 or
+\f1\b0 \cf3 d for Vincent\\n" +\
+      
+\f0\b \cf5  \cf2   \cf5               \cf2  "\cf5 \\tNo\cf2  T\cf5 im
+\f1\b0 \cf3 e to Die\\t12.0\\n" +\
+     
+\f0\b \cf5                    "\cf2 Am\cf5 ou
+\f1\b0 \cf3 nt owed is 12.0\\n" +\
+    
+\f0\b \cf5                     "You earned 2 fre
+\f1\b0 \cf3 quent renter p\cf4 oints");\
+
+\f0\b \cf2     \}\
+\
+    @Test
+\f1\b0 \cf3 \
+    public final void print_statement_when_rent_a_children_movie_for_5_days() \{\
+  
+\f0\b \cf2     
+\f1\b0 \cf3   Custome
+\f0\b \cf5 r vincent
+\f1\b0 \cf3  = new Customer("Vincent");\
+
+\f0\b \cf2     
+\f1\b0 \cf3     vin
+\f0\b \cf2 cent
+\f1\b0 \cf3 .addRe
+\f0\b \cf5 ntal(new R
+\f1\b0 \cf3 ental(ne
+\f2\i\b \cf6 w Movie(
+\f1\i0\b0 \cf3 "Fr\cf7 o\cf3 zen 2", Movi
+\f3\i e.CHILDREN
+\f1\i0 ), 5));\
+        assertThat(vincent.statement())
+\f0\b \cf5 \
+                .isEqualT\cf2 o(\cf5 "R
+\f1\b0 \cf3 ental Record for Vincent\\n
+\f0\b \cf5 "\cf2  +\cf5 \
+      \cf2   \cf5    \cf2   \cf5   
+\f1\b0 \cf3          "\\tFrozen 2\\t4.5\\
+\f0\b \cf5 n" +\
+             \cf2   \cf5   
+\f1\b0 \cf3        "Amount owed is 4.5
+\f0\b \cf5 \\n" +\
+                        "You e
+\f1\b0 \cf3 arned 1 freque\cf4 nt renter 
+\f0\b \cf2 points");\
+    \}\
+
+\f1\b0 \cf3 \
+    @Test\
+    public final void print_statement_when_rent_several_mov
+\f0\b \cf2 ies(
+\f1\b0 \cf3 ) \{\
+    
+\f0\b \cf5     Custo
+\f1\b0 \cf3 mer vincent = new Customer("Vi
+\f0\b \cf2 ncen
+\f1\b0 \cf3 t");\
+
+\f0\b \cf5 \
+        M
+\f1\b0 \cf3 ovie sta
+\f2\i\b \cf6 r_wars = ne
+\f1\i0\b0 \cf3 w Movie("Star wars", Movie.NEW_RELEASE);
+\f2\i\b \cf6 \
+     
+\f1\i0\b0 \cf3    star_wars.setPriceCode(Mov
+\f0\b \cf2 ie.R
+\f1\b0 \cf3 EGULAR);\
+        \cf7 v\cf3 incent.addRental(new Rental(st
+\f0\b \cf2 ar_w
+\f1\b0 \cf3 ars, 1)
+\f0\b \cf2 );\
+
+\f1\b0 \cf3       
+\f0\b \cf5   vincent.addRen
+\f1\b0 \cf3 tal(new 
+\f2\i\b \cf6 Rental(new 
+\f1\i0\b0 \cf3 Mov\cf7 i\cf3 e("No Time to Die", Movie.NEW_
+\f0\b \cf2 RELE
+\f1\b0 \cf3 ASE), 2
+\f0\b \cf2 ));
+\f1\b0 \cf3 \
+     
+\f0\b \cf5    vincent
+\f1\b0 \cf3 .addRent
+\f2\i\b \cf6 al(new R
+\f1\i0\b0 \cf3 ent\cf7 a\cf3 l(new Movie("
+\f3\i Frozen 2",
+\f1\i0  Movie.CHILDREN), 5));\
+\
+        assertThat(vinc
+\f0\b \cf5 ent.statement())\
+        \cf2   \cf5   
+\f1\b0 \cf3     .isEqualTo("Rental Rec
+\f0\b \cf5 o\cf2 rd\cf5  for Vinc\cf2 en\cf5 t\\n\cf2 " \cf5 +
+\f1\b0 \cf3 \
+                        "
+\f0\b \cf5 \\\cf2 tS\cf5 tar wars\\t2.0\\\cf2 n"\cf5  +\cf2 \
+ \cf5   
+\f1\b0 \cf3                      "\\tNo
+\f0\b \cf5  \cf2 Ti\cf5 me to Di\cf2 e\\\cf5 t6.\cf2 0\\\cf5 n"
+\f1\b0 \cf3  +\
+                      
+\f0\b \cf5   "\\tFrozen 2\\t4.5\\n\cf2 " \cf5 +
+\f1\b0 \cf3 \
+                        "
+\f0\b \cf5 Amount owed is 12.5\\n" +\
+           
+\f1\b0 \cf3              
+\f4\fs20 \cf8 "
+\f0\b\fs14 \cf2 You earned 4 
+\f1\b0 \cf3 frequent rente
+\f0\b \cf2 r points
+\f1\b0 \cf3 ");\
+ 
+\f0\b \cf6    \}\
+
+\f1\b0 \cf3 \}\
+\
+
+\f0\b \cf2 \
+\
+public cl\cf6 ass Rental 
+\f1\b0 \cf3 \{\
+\
+  
+\f0\b \cf2   priva
+\f1\b0 \cf3 te Movie _movie;\
+  
+\f0\b \cf2   pr
+\f1\b0 \cf3 ivate int _daysRented;
+\f0\b \cf6 \
+\
+   
+\f1\b0 \cf3  public Rental(Mo
+\f0\b \cf6 vie movie, i
+\f1\b0 \cf3 nt daysRented) \{\
+       
+\f0\b \cf2  _movie = m
+\f1\b0 \cf3 ovie;\
+        _daysRented
+\f0\b \cf2  = days\cf6 Rented;\
+  
+\f1\b0 \cf3   \}\
+\
+    p
+\f0\b \cf2 ublic i
+\f1\b0 \cf3 nt getDaysRented() \{\
+     
+\f0\b \cf2    retu\cf6 rn _da
+\f1\b0 \cf3 ysRented;
+\fs16 \
+
+\f5\b\fs20 \cf9   
+\f0\fs14 \cf2   \}\
+    publ
+\f1\b0 \cf3 ic Movie getM
+\f0\b \cf2 ovie() \{\
+        return
+\f2\i \cf6  _movie;
+\f1\i0\b0 \cf3 \
+ \cf7  \cf3   \}\
+\}
+\f0\b \cf2 \
+\
+\
+\
+public class Mov
+\f2\i \cf6 ie \{\
+\
+    
+\f1\i0\b0 \cf3 pu\cf7 b\cf3 lic st
+\f0\b \cf2 atic final int CHILDREN 
+\f2\i \cf6 = 2;\
+  
+\f1\i0\b0 \cf3   \cf7 p\cf3 ublic s
+\f0\b \cf2 tatic fi
+\f1\b0 \cf3 nal int
+\f0\b \cf6  NEW_R
+\f1\b0 \cf3 ELEASE
+\f0\b \cf2  = 1;\
+    p\cf6 ublic stat
+\f1\b0 \cf3 ic fina
+\f0\b \cf2 l int R
+\f1\b0 \cf3 EGULAR = 0;\
+\
+    p
+\f0\b \cf2 riva
+\f1\b0 \cf3 te String _title;\
+  
+\f0\b \cf6   priva
+\f1\b0 \cf3 te int _priceCode
+\f0\b \cf6 ;\
+\
+    pu
+\f1\b0 \cf3 blic Movie(String title,
+\f0\b \cf2  int priceC
+\f1\b0 \cf3 ode) \{\
+        _title = 
+\f0\b \cf2 title;\cf6 \
+        _
+\f1\b0 \cf3 priceCode = p
+\f0\b \cf2 riceCod
+\f1\b0 \cf3 e;\
+    \}\
+\
+    public int 
+\f0\b \cf2 getPric\cf6 eCode(
+\f1\b0 \cf3 ) \{\
+     
+\f4\fs18 \cf8  
+\f0\b\fs16 \cf2   return _pri
+\f1\b0 \cf3 ceCode;\
+    \}\
+
+\f0\b \cf2 \
+    pu
+\f1\b0 \cf3 blic St
+\f0\b \cf6 ring 
+\f1\b0 \cf3 getTit
+\f0\b \cf2 le() \{\
+
+\f1\b0 \cf3         retur
+\f0\b \cf6 n _title;
+\f1\b0 \cf3 \
+
+\f0\b \cf2     
+\f1\b0 \cf3 \}\
+\}\
+\
+public class
+\f0\b \cf2  Custom
+\f1\b0 \cf3 er \{\
+\
+    private String _name
+\f0\b \cf6 ;\
+   
+\f1\b0 \cf3  private List<Renta
+\f0\b \cf2 l> _rentals 
+\f1\b0 \cf3 = new ArrayList<>();\
+\
+    publ
+\f0\b \cf6 ic Custo
+\f1\b0 \cf3 mer(String name) \{\
+  
+\f0\b \cf2       _
+\f1\b0 \cf3 name = name;\
+    \}\
+\
+    
+\f0\b \cf2 public \cf6 void 
+\f1\b0 \cf3 addRental(Ren
+\f0\b \cf2 tal arg
+\f1\b0 \cf3 ) \{\
+        _rentals.add(arg
+\f0\b \cf2 );\
+   
+\f1\b0 \cf3  \}\
+\
+    publ\cf7 i\cf3 c String g
+\f0\b \cf2 etNa
+\f1\b0 \cf3 me() \{\
+        return \cf7 _\cf3 name;\
+    \}\
+\
+    public
+\f0\b \cf5  String statement() \{
+\f1\b0 \cf3 \
+        doub
+\f0\b \cf5 l\cf2 e \cf5 t
+\f1\b0 \cf3 otalAmount 
+\f0\b \cf2 = 0;
+\f1\b0 \cf3 \
+        int 
+\f0\b \cf6 frequent
+\f1\b0 \cf3 RenterPoints = 0
+\f0\b \cf2 ;\
+    
+\f1\b0 \cf3     String re\cf7 s\cf3 ult = "Rental 
+\f3\i \cf10 Record for " + getName() + "\\n";\
+\
+        fo
+\f0\i0\b \cf2 r (Rent
+\f1\b0 \cf3 al each: _rentals) \{\
+            double thisAmount
+\f0\b \cf2  = 0;
+\f1\b0 \cf3 \
+    
+\f2\i\b \cf6        
+\f1\i0\b0 \cf3  //determine amounts for each line\
+\cf7  \cf3            switch (eac
+\f0\b \cf2 h.g
+\f1\b0 \cf3 etMovie().getPriceCode()\cf7 )\cf3  \{\
+                case Movie.REGULAR:\
+                    thi\cf7 s\cf3 Amou\cf7 nt \cf3 += 2;\
+               
+\f0\b \cf2      
+\f1\b0 \cf3 if (each.getDaysRe
+\f0\b \cf2 nted(
+\f1\b0 \cf3 ) > 2)
+\f2\i\b \cf6 \
+         
+\f1\i0\b0 \cf3                thisAmount += (each.getDaysRented() - 2) * 1\cf7 .\cf3 5;\
+                  
+\f0\b \cf2   bre
+\f1\b0 \cf3 ak;\
+             
+\f0\b \cf2    ca
+\f1\b0 \cf3 se Mov
+\f2\i\b \cf6 ie.NEW_R
+\f1\i0\b0 \cf3 ELEASE:\
+                    thisAmo\cf7 unt\cf3  += each.getDaysRented
+\f0\b \cf2 () 
+\f1\b0 \cf3 * 3;\
+                  \cf7  \cf3  break;\
+                case Movie.CHILDREN:\
+                 \cf7  \cf3   th\cf7 isA\cf3 mount += 1.5;\
+       
+\f0\b \cf2      
+\f1\b0 \cf3         if (each.getDaysRent
+\f3\i \cf10 ed() > 3)\
+                        thisAmo
+\f1\i0 \cf3 unt += (each.getDaysRented() - 3) * 
+\f3\i \cf10 1.5;\
+                    break;\
+            \}\
+       
+\f0\i0\b \cf2    
+\f1\b0 \cf3   // add frequent renter points\
+         
+\f2\i\b \cf6    frequent
+\f1\i0\b0 \cf3 RenterPoints++;\
+           \cf7  \cf3 // add bonus for a two day new release each\
+         
+\f3\i \cf10    if ((each.getMovie().getPriceCode() == 
+\f1\i0 \cf3 Movie.NEW_
+\f0\b \cf5 R\cf2 EL\cf5 EA
+\f1\b0 \cf3 SE) && each.getDaysRented() > 1
+\f0\b \cf5 )\cf2 \
+\cf5   
+\f1\b0 \cf3               f
+\f0\b \cf5 r\cf2 eq\cf5 u
+\f1\b0 \cf3 entRenterPoints++;\
+            // show figures for this ea
+\f3\i \cf10 ch\
+            result += "\\
+\f1\i0 \cf3 t" + each.
+\f0\b \cf5 getMovie().getTitl
+\f1\b0 \cf3 e() + "\\t" + thi
+\f0\b \cf5 s\cf2 Am\cf5 o
+\f1\b0 \cf3 unt + "\\n";\
+       
+\f0\b \cf5      totalAmou
+\f1\b0 \cf3 nt += thisAmount;\
+      
+\f0\b \cf5   \}\
+        // add foote
+\f1\b0 \cf3 r lines\
+ 
+\f0\b \cf2        
+\f1\b0 \cf3 result += "Amount
+\f4\fs20 \cf8  
+\f0\b\fs16 \cf2 owed is
+\f1\b0 \cf3  " + totalAmount + "\\n";
+\f0\b \cf2 \
+      
+\f1\b0 \cf3   result += "Y\cf7 o\cf3 u earn
+\f0\b \cf2 ed "
+\f1\b0 \cf3  + frequentRenterPoints\cf7  \cf3 + " frequent renter po
+\f0\b \cf5 ints";\
+        retur
+\f1\b0 \cf3 n result;\
+   
+\f0\b \cf5  \cf2 \}\cf5 \
+
+\f1\b0 \cf3 \}\
+\
+\
+
+\f0\b \cf2 publ
+\f1\b0 \cf3 ic String stat
+\f0\b \cf6 ement() 
+\f1\b0 \cf3 \{\
+ 
+\f0\b    double totalAmount = 0;\
+    int frequentRenterPoints 
+\f1\b0 = 0;\
+   
+\f0\b \cf2  String
+\f1\b0 \cf3  result = "Re\cf7 n\cf3 t
+\f3\i \cf10 a
+\f0\i0\b \cf3 l Record for " + getName() + "\\n";\
+\
+    for 
+\f3\i\b0 \cf10 (Rental e
+\f0\i0\b \cf2 ach: _r
+\f1\b0 \cf3 entals) \{\
+// Start Feature Envy -> Rental -> r
+\f0\b \cf2 ental
+\f1\b0 \cf3 .compu
+\f2\i\b \cf6 teAmoun
+\f1\i0\b0 \cf3 t()\
+        double thisAmount =\cf7  \cf3 0;\
+// Start switc
+\f0\b \cf2 h s
+\f1\b0 \cf3 tatements -> strategy pa\cf7 t\cf3 tern\
+        switch (each.getMovie().getPriceCode()) \{\
+   \cf7  \cf3     \cf7    \cf3  case Movie.REGULA
+\f0\b \cf2 R:\
+ 
+\f1\b0 \cf3               
+\f0\b \cf2  this
+\f1\b0 \cf3 Amount
+\f2\i\b \cf6  += 2;\
+   
+\f1\i0\b0 \cf3              if (each.getDaysRented() > 2)\
+           \cf7  \cf3         thisAmount
+\f0\b \cf2  += (
+\f1\b0 \cf3 each.getDaysRe
+\f0\b \cf2 nted(
+\f1\b0 \cf3 ) - 2)
+\f2\i\b \cf6  * 1.5;
+\f1\i0\b0 \cf3 \
+                break;\
+       \cf7    \cf3   case Movie.NEW_R
+\f0\b \cf2 ELE
+\f1\b0 \cf3 ASE:\
+                th\cf7 i\cf3 sAmount += each.getDaysRented() * 3;\
+                break;\
+   \cf7    \cf3       case Movie.C
+\f0\b \cf2 HILDR
+\f1\b0 \cf3 EN:\
+       
+\f0\b          thisAmount += 1.5;\
+                if (each.getDaysRented() > 3)\
+                    thisAmount += (each.getDaysRented(
+\f1\b0 ) - 3) *
+\f3\i \cf10  1.5;\
+                break;\
+       
+\f1\i0 \cf3  \}\
+// End switch statements\
+//
+\f3\i \cf10  End Feature Envy class Rental\
+// Start Feature Env
+\f0\i0\b \cf2 y -
+\f1\b0 \cf3 > Rental -> rental.computeFrequentRenterPo
+\f2\i\b \cf6 ints()\
+   
+\f1\i0\b0 \cf3      // add frequent renter \cf7 p\cf3 oints\
+        frequentRenterPoints++;
+\f0\b \
+        // add bonus for a two
+\f1\b0  day new 
+\f3\i \cf10 release each\
+        if ((each.getMov
+\f1\i0 \cf3 ie().getPr
+\f0\b \cf5 i\cf2 ce\cf5 Co
+\f1\b0 \cf3 de() == Movie.NEW_RELEASE) && e
+\f0\b \cf5 a\cf2 ch\cf5 .g
+\f1\b0 \cf3 etDaysRented() 
+\f0\b \cf5 >\cf2  1\cf5 )
+\f1\b0 \cf3 \
+            frequentRenterPoints++;\
+// End F
+\f3\i \cf10 eature Envy class Rental
+\f1\i0 \cf3 \
+        
+\f0\b \cf5 // show figures fo
+\f1\b0 \cf3 r this each\
+   
+\f0\b \cf5  \cf2   \cf5  
+\f1\b0 \cf3  result += "\\t" 
+\f0\b \cf5 + each.getMovi
+\f1\b0 \cf3 e().getTitle() + "\\t" + t
+\f0\b \cf5 hisAmount + "\\n";\
+      
+\f1\b0 \cf3   tota
+\f0\b \cf2 lAmount
+\f1\b0 \cf3  += thisAmo
+\f5\b\fs20 \cf9 u
+\fs26 n
+\f0\fs16 \cf2 t;\
+    \}\
+ 
+\f1\b0 \cf3    // add footer lines\
+    result += "Amount owe
+\f0\b \cf2 d is
+\f1\b0 \cf3  " + totalAmount + "\\n"\cf7 ;\cf3 \
+    
+\f3\i \cf10 result += "You earned " + frequent
+\f1\i0 \cf3 RenterPoints + " frequent re
+\f3\i \cf10 nter points";\
+    return result;\
+\}\
+\
+\uc0\u8195 \
+\
+publi
+\f0\i0\b \cf2 c i
+\f1\b0 \cf3 nt computeFrequentRenterPoints(Rental rental
+\f2\i\b \cf6 ) \{\
+    in
+\f1\i0\b0 \cf3 t frequentRenterPoints = 0;\
+ \cf7  \cf3   // add frequent renter points\
+    f
+\f0\b \cf2 requent
+\f1\b0 \cf3 RenterPoints++;\
+    // a
+\f4\fs20 \cf8 dd
+\f1\fs16 \cf3  bonus for a two day new release rental\
+    if ((rental.getMo
+\f3\i \cf10 vie().getPriceCode() == Movie.NE
+\f1\i0 \cf3 W_RELEASE)
+\f0\b \cf5  \cf2 &&\cf5  r
+\f1\b0 \cf3 ental.getDaysRented() > 1)\
+     
+\f0\b \cf5  \cf2   \cf5 fr
+\f1\b0 \cf3 equentRenterPoi
+\f0\b \cf5 n\cf2 ts\cf5 +
+\f1\b0 \cf3 +;\
+    return frequentRenterP
+\f4\fs20 \cf8 o
+\f0\b\fs16 \cf2 ints;\
+\}\
+\
+
+\f1\b0 \cf3 \
+\
+frequentRen
+\f0\b \cf2 terPoint
+\f1\b0 \cf3 s += r
+\f0\b \cf6 ental.
+\f1\b0 \cf3 comput
+\f0\b \cf2 eFrequentRen\cf6 terPoints()
+\f1\b0 \cf3 ;\
+// s
+\f0\b \cf2 how fig
+\f1\b0 \cf3 ures for this rental
+\f0\b \cf2 \
+re
+\f1\b0 \cf3 sult += "\\t" + rental.
+\f0\b \cf6 getMovi
+\f1\b0 \cf3 e().getTitle() + 
+\f0\b \cf6 "\\t" + thisA
+\f1\b0 \cf3 mount + "\\n";\
+totalAmoun
+\f0\b \cf2 t += thisAm
+\f1\b0 \cf3 ount;\
+\
+\
+public class Re
+\f0\b \cf2 ntal \{\cf6 \
+\
+    priv
+\f1\b0 \cf3 ate Movie _m
+\f0\b \cf2 ovie;\
+
+\f1\b0 \cf3     private int _daysRented
+\f0\b \cf2 ;\
+\
+  \cf6   publ
+\f1\b0 \cf3 ic Rental(Mov
+\f0\b \cf2 ie movie, i
+\f1\b0 \cf3 nt daysRented) \{\
+        _movie = movie
+\f0\b \cf2 ;\
+ 
+\f1\b0 \cf3        _daysRented = da\cf7 y\cf3 sRented;\
+
+\f3\i \cf10     \}\
+\
+    public int getDaysRented(
+\f1\i0 \cf3 ) \{\
+        return _daysRented;
+\f3\i \cf10 \
+    \}\
+    public Movie getMovie() \{\
+        return
+\f0\i0\b \cf2  _m
+\f1\b0 \cf3 ovie;\
+    \}\
+\
+    public int comput
+\f2\i\b \cf6 eFrequentRe
+\f1\i0\b0 \cf3 nterPoints() \{\
+       \cf7  \cf3 int frequentRenterPoints = 0;\
+        // add 
+\f0\b \cf2 frequen
+\f1\b0 \cf3 t renter points\
+        frequ
+\f4\fs20 \cf8 en
+\f0\b\fs16 \cf2 tRenterPoints
+\f1\b0 \cf3 ++;\
+        // 
+\f0\b \cf2 add bonus for 
+\f1\b0 \cf3 a two day new r
+\f0\b \cf6 elease rental
+\f1\b0 \cf3 \
+     
+\f0\b \cf2    if ((
+\f1\b0 \cf3 getMovi
+\f0\b \cf6 e().g
+\f1\b0 \cf3 etPric
+\f0\b \cf2 eCode() 
+\f1\b0 \cf3 == Movie.NEW_
+\f0\b \cf6 RELEASE) 
+\f1\b0 \cf3 &&
+\f0\b \cf2  get
+\f1\b0 \cf3 DaysRented() > 1)\
+ 
+\f0\b \cf2        
+\f1\b0 \cf3     frequentRenterPoints++;\
+   
+\f0\b \cf2     
+\f1\b0 \cf3  return
+\f0\b \cf2  fre
+\f1\b0 \cf3 quentRenterPoints;\
+    \}\
+\}\
+\
+\
+
+\f0\b \cf2 public 
+\f1\b0 \cf3 class Customer \{\
+\
+    private final PrintStatement printState
+\f0\b \cf6 ment;
+\f1\b0 \cf3 \
+    private Str
+\f0\b \cf2 ing 
+\f1\b0 \cf3 _
+\f0\b \cf6 name;\
+    priv
+\f1\b0 \cf3 ate List<Rental> _rentals = n
+\f0\b \cf2 ew ArrayList
+\f1\b0 \cf3 <>();\
+\
+    public Customer(Str
+\f0\b \cf6 ing name
+\f1\b0 \cf3 ) \{\
+        this(name
+\f0\b \cf2 , new P
+\f1\b0 \cf3 rintTextStatement());\
+    
+\f0\b \cf2 \}\
+\
+  \cf6   pub
+\f1\b0 \cf3 lic Customer(
+\f0\b \cf2 String 
+\f1\b0 \cf3 name, PrintStatement printStat
+\f0\b \cf2 ement) \{\cf6 \
+        _nam
+\f1\b0 \cf3 e = name;\
+        this.printStatement = prin
+\f0\b \cf6 tStateme
+\f1\b0 \cf3 nt;\
+    \}\
+\
+    public void addRental(Rental arg) \{\
+        _rentals.add(arg);\
+    \}\
+\
+    public String getName() \{\
+        return _nam
+\f0\b \cf2 e;\
+   
+\f1\b0 \cf3  \}\
+\
+    public String statement() \{\
+\
+      
+\f0\b \cf2   retur\cf6 n  print
+\f1\b0 \cf3 Statement.header(getName())\
+                    .body(_re\cf7 n\cf3 tals)\
+    
+\f3\i    
+\f1\i0               
+\f0\b \cf2    .foo
+\f1\b0 \cf3 ter(computeTotalAmount(), computeFrequ
+\f0\b \cf2 entRent\cf6 erPoint(
+\f1\b0 \cf3 ))\
+                            .getStatemen\cf7 t()\cf3 ;\
+    \}\
+
+\f3\i \
+ 
+\f1\i0    public In
+\f4\fs20 \cf8 te
+\f1\fs16 \cf3 ger 
+\f0\b \cf2 compute
+\f1\b0 \cf3 FrequentRenterPoint() \{\
+       
+\f0\b \cf2  ret
+\f1\b0 \cf3 urn _re
+\f0\b \cf2 ntal
+\f1\b0 \cf3 s.stream().map(Rental::computeFreq
+\f0\b \cf2 uentRen
+\f1\b0 \cf3 terPoints).reduce(0, Integer::sum);\
+    \}\
+\
+    public Double
+\f0\b \cf6  compu
+\f1\b0 \cf3 teTotalAmount() 
+\f0\b \cf2 \{\
+ 
+\f1\b0 \cf3  
+\f0\b \cf6       return _r
+\f1\b0 \cf3 entals.stream().map(Ren
+\f5\b\fs20 \cf8 ta
+\f0\fs16 \cf2 l::computeAmount)
+\f1\b0 \cf3 .reduce(0.0, Double::sum);\
+    \}\
+\}\
+\
+\
+\
+    public Customer(String name) \{\
+        this(name, new PrintTextState
+\f0\b \cf2 ment())
+\f1\b0 \cf3 ;\
+    \}\
+\
+ 
+\f0\b \cf2    p
+\f1\b0 \cf3 ublic Customer(String name, PrintStatement printStatement) \{\
+        _nam
+\f4\fs20 \cf8 e 
+\f0\b\fs16 \cf2 = name;\
+    
+\f1\b0 \cf3     this.printState
+\f0\b \cf2 ment = prin
+\f1\b0 \cf3 tStatement;\
+    \}\uc0\u8195 \
+p\cf4 ublic interfac
+\f0\b \cf2 e Print
+\f1\b0 \cf3 Statement \{\
+    \
+    String ge
+\f0\b \cf2 tStatem\cf6 ent();\
+\
+
+\f1\b0 \cf3     PrintStat
+\f0\b \cf2 ement he
+\f1\b0 \cf3 ader(St
+\f0\b \cf6 ring name)
+\f1\b0 \cf3 ;\
+\
+  \cf4   PrintStateme
+\f0\b \cf2 nt foot
+\f1\b0 \cf3 er(double totalAmount, int frequentRenterPoin
+\f0\b \cf6 ts);\
+\
+   
+\f1\b0 \cf3  Pr
+\f0\b \cf5 intStatement body(Lis
+\f1\b0 \cf3 t<Rental>
+\f0\b \cf5  \cf2 re\cf5 n
+\f1\b0 \cf3 tals);\
+\}
+\f0\b \cf2 \
+\
+\
+\
+publ
+\f1\b0 \cf3 ic class Prin\cf4 tTextStatement
+\f0\b \cf2  implem
+\f1\b0 \cf3 ents PrintStatement \{
+\f0\b \cf2 \
+\
+    
+\f1\b0 \cf3 @Override\
+  
+\f0\b \cf2   pu
+\f1\b0 \cf3 blic String getStatement() \{\
+        return _state
+\f0\b \cf5 me
+\f1\b0 \cf3 nt;\
+    \}\
+\
+    priva
+\f0\b \cf5 te String _stateme
+\f1\b0 \cf3 nt;\
+\
+    @Over
+\f0\b \cf5 r\cf2 id\cf5 e
+\f1\b0 \cf3 \
+    public PrintState
+\f0\b \cf5 ment header(St
+\f1\b0 \cf3 ring name) \{\
+        _st
+\f0\b \cf5 atement =  "Rental Record
+\f1\b0 \cf3  for " + n
+\f0\b \cf6 ame + "\\n";
+\f1\b0 \cf3 \
+        return this;
+\f0\b \cf2 \
+    \}\
+\
+
+\f1\b0 \cf3     @Override\cf4 \
+    public P
+\f0\b \cf2 rintSta
+\f1\b0 \cf3 tement footer(double totalAmount, int frequentRenterPoints) \{\
+        
+\f0\b \cf5 St
+\f1\b0 \cf3 ring state
+\f0\b \cf2 ment
+\f1\b0 \cf3  = "";\
+        statement += "Amount owed is " + tota
+\f0\b \cf5 l\cf2 Am\cf5 ou
+\f1\b0 \cf3 nt + "\\n";\
+        statement += 
+\f0\b \cf5 "\cf2 Yo\cf5 u 
+\f1\b0 \cf3 earned " + frequentRenterPo
+\f0\b \cf5 i\cf2 nt\cf5 s
+\f1\b0 \cf3  + " frequent renter
+\f0\b \cf6  points";\
+
+\f1\b0 \cf3         _statement += 
+\f0\b \cf2 statement;
+\f1\b0 \cf3 \
+        re
+\f4\fs20 \cf8 t
+\f6\fs24 \cf0 urn this;\
+    \}\
+\
+    @Override\
+    public PrintStatement body(List<Rental> rentals) \{\
+        String statement = "";\
+        for (Rental rental : rentals) \{\
+            statement += "\\t" + rental.getMovie().getTitle() + "\\t" + rental.computeAmount() + "\\n";\
+        \}\
+        _statement += statement;\
+        return this;\
+    \}\
+\}\
+\
+\
+}
